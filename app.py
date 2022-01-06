@@ -30,32 +30,32 @@ class App:
 
         upload_button=tk.Button(root)
         upload_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=10)
+        ft = tkFont.Font(family='Arial Bold',size=20)
         upload_button["font"] = ft
         upload_button["fg"] = "#000000"
         upload_button["justify"] = "center"
         upload_button["text"] = "UPLOAD"
-        upload_button.place(x=560,y=30,width=130,height=30)
+        upload_button.place(x=560,y=30,width=130,height=40)
         upload_button["command"] = self.upload
 
         save_button=tk.Button(root)
         save_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=10)
+        ft = tkFont.Font(family='Arial Bold',size=20)
         save_button["font"] = ft
         save_button["fg"] = "#000000"
         save_button["justify"] = "center"
         save_button["text"] = "SAVE"
-        save_button.place(x=560,y=130,width=130,height=30)
+        save_button.place(x=560,y=130,width=130,height=40)
         save_button["command"] = self.save
 
         generate_button=tk.Button(root)
         generate_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=10)
+        ft = tkFont.Font(family='Arial Bold',size=20)
         generate_button["font"] = ft
         generate_button["fg"] = "#000000"
         generate_button["justify"] = "center"
         generate_button["text"] = "GENERATE"
-        generate_button.place(x=560,y=80,width=130,height=30)
+        generate_button.place(x=560,y=80,width=130,height=40)
         generate_button["command"] = self.generate
 
         img_input = ImageTk.PhotoImage(Image.open("resources/input_icon.png").resize((343, 285)))
@@ -68,13 +68,18 @@ class App:
         output_label.image = img_output
         output_label.place(x=370,y=190,width=343,height=285)
 
-        GLabel_990=tk.Label(root)
+ 
+        logo = ImageTk.PhotoImage(Image.open("resources/colorizer.png"))
+        GLabel_990=tk.Label(root, image=logo)
         ft = tkFont.Font(family='Times',size=10)
         GLabel_990["font"] = ft
         GLabel_990["fg"] = "#333333"
         GLabel_990["justify"] = "center"
+        GLabel_990.image = logo
         GLabel_990["text"] = "LOGO LABEL"
         GLabel_990.place(x=10,y=30,width=425,height=114)
+
+        
 
     def upload(self):
         self.filename = filedialog.askopenfilename()
