@@ -1,16 +1,18 @@
-from tkinter import *
-import tkinter as tk
-from tkinter import filedialog
-import tkinter.font as tkFont
-import PyPDF2
-from PIL import Image, ImageTk
-from tkinter.filedialog import askopenfile, asksaveasfilename
-from cv2 import FileNode_NAMED
 import os
+import tkinter as tk
+import tkinter.font as tkFont
+from tkinter import *
+from tkinter import filedialog
+from tkinter.filedialog import askopenfile, asksaveasfilename
 
+import PyPDF2
+from cv2 import FileNode_NAMED
 from numpy.core.fromnumeric import resize
+from PIL import Image, ImageTk
 
 from colorize import colorize
+
+FONT = 'Arial Bold'
 
 class App:
 
@@ -30,7 +32,7 @@ class App:
 
         upload_button=tk.Button(root)
         upload_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=20)
+        ft = tkFont.Font(family=FONT,size=20)
         upload_button["font"] = ft
         upload_button["fg"] = "#000000"
         upload_button["justify"] = "center"
@@ -40,7 +42,7 @@ class App:
 
         save_button=tk.Button(root)
         save_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=20)
+        ft = tkFont.Font(family=FONT,size=20)
         save_button["font"] = ft
         save_button["fg"] = "#000000"
         save_button["justify"] = "center"
@@ -50,11 +52,11 @@ class App:
 
         generate_button=tk.Button(root)
         generate_button["bg"] = "#c0c0c0"
-        ft = tkFont.Font(family='Arial Bold',size=20)
+        ft = tkFont.Font(family=FONT,size=20)
         generate_button["font"] = ft
         generate_button["fg"] = "#000000"
         generate_button["justify"] = "center"
-        generate_button["text"] = "GENERATE"
+        generate_button["text"] = "COLORIZE"
         generate_button.place(x=560,y=80,width=130,height=40)
         generate_button["command"] = self.generate
 
@@ -70,14 +72,14 @@ class App:
 
  
         logo = ImageTk.PhotoImage(Image.open("resources/colorizer.png"))
-        GLabel_990=tk.Label(root, image=logo)
+        logo_label=tk.Label(root, image=logo)
         ft = tkFont.Font(family='Times',size=10)
-        GLabel_990["font"] = ft
-        GLabel_990["fg"] = "#333333"
-        GLabel_990["justify"] = "center"
-        GLabel_990.image = logo
-        GLabel_990["text"] = "LOGO LABEL"
-        GLabel_990.place(x=10,y=30,width=425,height=114)
+        logo_label["font"] = ft
+        logo_label["fg"] = "#333333"
+        logo_label["justify"] = "center"
+        logo_label.image = logo
+        logo_label["text"] = "LOGO LABEL"
+        logo_label.place(x=10,y=30,width=425,height=114)
 
         
 

@@ -1,3 +1,4 @@
 
 model/colorization_release_v2.caffemodel
 __pycache__/colorize.cpython-38.pyc
+prev_code.py
