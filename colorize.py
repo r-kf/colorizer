@@ -86,10 +86,13 @@ def colorize(input):
     con = np.hstack([frame,img_bgr_out]) 
     cv.imwrite('out'+input,con)
 
+    filename, filetype = os.path.splitext(input)
+    cv.imwrite(filename + "_colorized" + filetype, img_bgr_out)
+
     return con, img_bgr_out
 
 
 if __name__ == "__main__":
-    out = colorize("examples/bliss.JPEG")
+    out = colorize("examples/pomegranate.jpg")
     cv.imshow("color", out[1])
     cv.waitKey()
