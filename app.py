@@ -5,7 +5,6 @@ from tkinter import *
 from tkinter import filedialog
 from tkinter.filedialog import askopenfile, asksaveasfilename
 
-import PyPDF2
 from cv2 import FileNode_NAMED
 from numpy.core.fromnumeric import resize
 from PIL import Image, ImageTk
@@ -120,8 +119,6 @@ class App:
         output_label.place(x=370,y=190,width=343,height=285)
 
         return img
-
-
 
 
 if __name__ == "__main__":
